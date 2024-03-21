@@ -16,6 +16,7 @@ namespace CrossCutting.IoT
 
             //Repositories
             services.AddScoped<IBookRepository, BookRepository>();
+
         }
     }
 }

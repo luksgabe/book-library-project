@@ -28,5 +28,11 @@ namespace BookLibrary.Api.Controllers
         {
             return Ok(await _bookAppService.GetBook(id));
         }
+
+        [HttpGet("find/{searchValue}")]
+        public async Task<IActionResult> Find(string searchValue)
+        {
+            return Ok(await _bookAppService.GetBook(searchValue));
+        }
     }
 }
