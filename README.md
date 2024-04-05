@@ -1,4 +1,3 @@
-# book-library-project
 <h1 align="center" > Book Library </h1>
 
 <h2> Project description </h2>
