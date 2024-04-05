@@ -18,6 +18,7 @@
 ## ✔️ Technologies used
 
 - ``.Net 7``
+- ``MVC WebApplication``
 - ``Api Restfull``
 - ``DDD``
 - ``Rich Domain``
