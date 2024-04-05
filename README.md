@@ -12,8 +12,8 @@
 
 # :hammer: Project Features
 
-- `Functionality 1`: Viewing registered books
-- `Funcionalidade 2`: Searching books by filter
+- `Feature 1`: Viewing registered books
+- `Feature 2`: Searching books by filter
 
 ## ✔️ Technologies used
 
