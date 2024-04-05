@@ -10,7 +10,7 @@
 <img src="http://img.shields.io/static/v1?label=STATUS&message=Finished project&color=BLUE&style=for-the-badge"/>
 </p>
 
-# :hammer: Funcionalidades do projeto
+# :hammer: Project Features
 
 - `Functionality 1`: Viewing registered books
 - `Funcionalidade 2`: Searching books by filter
