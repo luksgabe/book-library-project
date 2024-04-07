@@ -1,6 +1,5 @@
 using BookLibrary.Api.Configurations;
-using CrossCutting.IoT;
-using Microsoft.Extensions.Configuration;
+using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,7 +15,10 @@ builder.Configuration
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(c => c.SwaggerDoc("v1", new OpenApiInfo { Title = "My Library API", Version = "v1" }));
+
+// Adding MediatR for Domain Events and Notifications
+builder.Services.AddMediatR(c => c.RegisterServicesFromAssemblyContaining<Program>());
 
 //Add Database Config
 builder.Services.AddDatabaseConfiguration(builder.Configuration);
@@ -31,7 +33,10 @@ DatabaseConfig.CreateDatabaseIfNotExists(app);
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwaggerUI(c =>
+    {
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "My Library Api");
+    });
 }
 
 app.UseHttpsRedirection();

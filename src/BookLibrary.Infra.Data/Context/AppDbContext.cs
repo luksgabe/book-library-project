@@ -1,4 +1,6 @@
-﻿using BookLibrary.Domain.Entities;
+﻿using BookLibrary.Application.Mediator;
+using BookLibrary.Domain.Entities;
+using FluentValidation.Results;
 using Microsoft.EntityFrameworkCore;
 
 namespace BookLibrary.Infra.Data.Context
@@ -13,6 +15,9 @@ namespace BookLibrary.Infra.Data.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Ignore<ValidationResult>();
+            modelBuilder.Ignore<Event>();
+
             var currentAssembly = typeof(AppDbContext).Assembly;
             var efMappingTypes = currentAssembly.GetTypes().Where(t =>
                 t.FullName.StartsWith("BookLibrary.Infra.Data.Mapping.") &&

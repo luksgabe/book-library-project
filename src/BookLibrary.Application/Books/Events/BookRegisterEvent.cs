@@ -1,22 +1,10 @@
-﻿namespace BookLibrary.Domain.Entities
+﻿using BookLibrary.Application.Mediator;
+
+namespace BookLibrary.Application.Books.Events
 {
-    public class Book : BaseEntity
+    public class BookRegisterEvent : Event
     {
-
-        public Book(int id, string title, string firstName, string lastName, int totalCopies, int copiesInUse, string type, string isbn, string category)
-        {
-            
-            Title=title;
-            FirstName=firstName;
-            LastName=lastName;
-            TotalCopies=totalCopies;
-            CopiesInUse=copiesInUse;
-            Type=type;
-            Isbn=isbn;
-            Category=category;
-        }
-
-        public Book(string title, string firstName, string lastName, int totalCopies, int copiesInUse, string type, string isbn, string category)
+        public BookRegisterEvent(string title, string firstName, string lastName, int totalCopies, int copiesInUse, string type, string isbn, string category)
         {
             Title=title;
             FirstName=firstName;
@@ -28,8 +16,7 @@
             Category=category;
         }
 
-        protected Book() { }
-
+        public int Id { get; private set; }
         public string Title { get; private set; }
         public string FirstName { get; private set; }
         public string LastName { get; private set; }

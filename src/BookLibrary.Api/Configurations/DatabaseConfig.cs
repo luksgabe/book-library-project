@@ -1,4 +1,5 @@
-﻿using BookLibrary.Infra.Data.Context;
+﻿using BookLibrary.Data.Context;
+using BookLibrary.Infra.Data.Context;
 using Microsoft.EntityFrameworkCore;
 
 namespace BookLibrary.Api.Configurations
@@ -11,6 +12,9 @@ namespace BookLibrary.Api.Configurations
 
             services.AddDbContext<AppDbContext>(options =>
                 options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddDbContext<EventStoreSqlContext>(options =>
+               options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
         }
 
         public static void CreateDatabaseIfNotExists(IApplicationBuilder app)

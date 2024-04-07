@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BookLibrary.Application\BookLibrary.Application.csproj" />
+    <ProjectReference Include="..\BookLibrary.CrossCutting.Bus\BookLibrary.CrossCutting.Bus.csproj" />
     <ProjectReference Include="..\BookLibrary.Domain\BookLibrary.Domain.csproj" />
     <ProjectReference Include="..\BookLibrary.Infra.Data\BookLibrary.Data.csproj" />
   </ItemGroup>
