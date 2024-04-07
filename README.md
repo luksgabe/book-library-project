@@ -1,4 +1,3 @@
-# book-library-project
 <h1 align="center" > Book Library </h1>
 
 <h2> Project description </h2>
@@ -12,12 +11,13 @@
 
 # :hammer: Project Features
 
-- `Functionality 1`: Viewing registered books
-- `Funcionalidade 2`: Searching books by filter
+- `Feature 1`: Viewing registered books
+- `Feature 2`: Searching books by filter
 
 ## ✔️ Technologies used
 
 - ``.Net 7``
+- ``MVC WebApplication``
 - ``Api Restfull``
 - ``DDD``
 - ``Rich Domain``
