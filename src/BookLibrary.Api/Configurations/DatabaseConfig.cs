@@ -21,8 +21,10 @@ namespace BookLibrary.Api.Configurations
         {
             using (var serviceScope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
             {
-                var context = serviceScope.ServiceProvider.GetRequiredService<AppDbContext>();
-                context.Database.Migrate();
+                var appContext = serviceScope.ServiceProvider.GetRequiredService<AppDbContext>();
+                var eventContext = serviceScope.ServiceProvider.GetRequiredService<EventStoreSqlContext>();
+                appContext.Database.Migrate();
+                eventContext.Database.Migrate();
             }
         }
     }
